@@ -11,7 +11,7 @@ $DataBase_Name = "iot";
 $User_Id = "admin";
 $PWD = "admin";
 
-
+/*
 
 $db = new PDO("$sgbd:server=$Server_Name;Database=$DataBase_Name", $User_Id, $PWD);
 $Query_Values = 'SELECT date_value AS [Date], temp_value AS [Temperature], humid_value AS [Pourcentage_Humidite] FROM value';
@@ -40,3 +40,4 @@ $Param_Value = $Result->fetch();
 
 $JSON = array('Parameters' => $Param_Value, 'Value' => $Param_Value );
 echo json_encode($JSON);
+*/
