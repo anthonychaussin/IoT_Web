@@ -18,7 +18,7 @@
                 b.send(data);
             }
 
-            function('/API', '', console.log);
+            function getHTTPPost('/API', '', console.log);
         </script>
 
 
