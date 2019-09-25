@@ -55,7 +55,7 @@ $infoReq = $Result->errorInfo();
 			var_dump($infoBDD);
 		}
 
-$Result->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Parameters');
+$Result->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Value');
 $Param_Value = $Result->fetch();
 
 $JSON = array('Parameters' => $Param_Value, 'Value' => $Param_Value );
