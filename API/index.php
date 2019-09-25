@@ -6,7 +6,7 @@
 class Value extends AnotherClass
 {
 	public $Date;
-	public $Température
+	public $Température;
 	public $Humidité; 
 	
 	function __construct($Date, $Température, $Humidité)
@@ -17,10 +17,7 @@ class Value extends AnotherClass
 	}
 	public function In_Time($Start_Datetime, $End_Datetime)
 	{
-		if ($this->Date < $Start_Datetime && $this->Date > $End_Datetime) {
-			return true;
-		}
-		else{return false;}
+		return ($this->Date < $Start_Datetime && $this->Date > $End_Datetime)
 	}
 }
 
@@ -29,7 +26,7 @@ class Value extends AnotherClass
  */
 class Temp extends AnotherClass
 {
-	public $Température
+	public $Température;
 	
 	function __construct($Température)
 	{
@@ -42,7 +39,7 @@ class Temp extends AnotherClass
  */
 class Humid extends AnotherClass
 {
-	public $Humidité
+	public $Humidité;
 	
 	function __construct($Humidité)
 	{
