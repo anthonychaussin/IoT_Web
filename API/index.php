@@ -1,71 +1,9 @@
 <?php 
 
-/**
- * Classe Value
- */
-class Value
-{
-	public $Date;
-	public $Température;
-	public $Humidité; 
-	
-	function __construct($Date, $Température, $Humidité)
-	{
-		$this->Date = $Date;
-		$this->Température = new Temp($Température);
-		$this->Humidité = new Humid($Humidité);
-	}
-	public function In_Time($Start_Datetime, $End_Datetime)
-	{
-		return ($this->Date < $Start_Datetime && $this->Date > $End_Datetime)
-	}
-}
-
-/**
- * Classe Température
- */
-class Temp
-{
-	public $Température;
-	
-	function __construct($Température)
-	{
-		$this->Température = $Température;
-	}
-}
-
-/**
- * Classe Humidité
- */
-class Humid
-{
-	public $Humidité;
-	
-	function __construct($Humidité)
-	{
-		if ($Humidité < 0) {$Humidité = 0;}
-		$this->Humidité = $Humidité;
-	}
-}
-
-/**
- * Classe Parametrs
- */
-class Parameters
-{
-	public $Température_Max;
-	public $Température_Min;
-	public $Humidité_Max;
-	public $Humidité_Min;
-	
-	function __construct($Température_Max, $Température_Min, $Humidité_Max, $Humidité_Min)
-	{
-		$this->Température_Max = new Temp($Température_Max);
-		$this->Température_Min = new Temp($Température_Min);
-		$this->Humidité_Max = new Humid($Humidité_Max);
-		$this->Humidité_Min = new Humid($Humidité_Min);
-	}
-}
+require 'Humid.php';
+require 'Temp.php';
+require 'Value.php';
+require 'Parameters.php';
 
 $sgbd = "mysql";
 $Server_Name = "localhost";
@@ -73,10 +11,10 @@ $DataBase_Name = "iot";
 $User_Id = "admin";
 $PWD = "admin";
 
-
+/*
 
 $db = new PDO("$sgbd:server=$Server_Name;Database=$DataBase_Name", $User_Id, $PWD);
-$Query_Values = 'SELECT date_value AS [Date], temp_value AS [Température], humid_value AS [Pourcentage_Humidité] FROM value';
+$Query_Values = 'SELECT date_value AS [Date], temp_value AS [Temperature], humid_value AS [Pourcentage_Humidite] FROM value';
 
 $Result = $db->query($Query_Values);
 
@@ -93,7 +31,7 @@ if (isset($_GET)) {
 	}
 }
 
-$Query_Parameters = 'SELECT temp_max AS [Température_Max], temp_min AS [Température_Min], humid_max AS [Humidité_Max], humid_min AS [Humidité_Min] FROM parameters';
+$Query_Parameters = 'SELECT temp_max AS [Temperature_Max], temp_min AS [Temperature_Min], humid_max AS [Humidite_Max], humid_min AS [Humidite_Min] FROM parameters';
 
 $Result = $db->query($Query_Parameters);
 
@@ -102,3 +40,4 @@ $Param_Value = $Result->fetch();
 
 $JSON = array('Parameters' => $Param_Value, 'Value' => $Param_Value );
 echo json_encode($JSON);
+*/
