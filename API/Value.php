@@ -14,7 +14,7 @@ class Value
 		$this->Temperature = new Temp($Temperature);
 		$this->Humidite = new Humid($Humidite);
 	}
-	public function In_Time($Start_Datetime, $End_Datetime)
+	function In_Time($Start_Datetime, $End_Datetime)
 	{
 		return ($this->Date < $Start_Datetime && $this->Date > $End_Datetime)
 	}
