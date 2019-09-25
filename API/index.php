@@ -31,7 +31,7 @@ $infoReq = $Result->errorInfo();
 
 
 $Result->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Value');
-$Tab_Value = $Result->fetch();
+$Tab_Value = $Result->fetchAll();
 
 if (isset($_GET)) {
 	if (isset($_GET['Start_Datetime']) && isset($_GET['End_Datetime'])) {
@@ -57,7 +57,7 @@ $infoReq = $Result->errorInfo();
 		}
 
 $Result->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Parameters');
-$Param_Value = $Result->fetch();
+$Param_Value = $Result->fetchAll();
 
 $JSON = array('Parameters' => $Param_Value, 'Value' => $Tab_Value );
 $JSON_String = json_encode($JSON);
