@@ -14,6 +14,7 @@ $PWD = "admin";
 
 
 $db = new PDO("$sgbd:server=$Server_Name;Database=$DataBase_Name", $User_Id, $PWD);
+
 $Query_Values = 'SELECT date_value AS "Date", temp_value AS "Temperature", humid_value AS "Pourcentage_Humidite" FROM iot.value';
 
 $Result = $db->prepare($Query_Values);
@@ -55,9 +56,9 @@ $infoReq = $Result->errorInfo();
 			var_dump($infoBDD);
 		}
 
-$Result->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Value');
+$Result->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Parameters');
 $Param_Value = $Result->fetch();
 
-$JSON = array('Parameters' => $Param_Value, 'Value' => $Param_Value );
+$JSON = array('Parameters' => $Param_Value, 'Value' => $Tab_Value );
 $JSON_String = json_encode($JSON);
 echo $JSON_String;
