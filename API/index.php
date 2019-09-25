@@ -19,6 +19,17 @@ $Query_Values = 'SELECT date_value AS [Date], temp_value AS [Temperature], humid
 $Result = $db->prepare($Query_Values);
 $Result->execute();
 
+
+$infoReq = $Result->errorInfo();
+		$infoBDD = ($db->errorInfo();
+		if ($infoReq[1] != NULL || $infoBDD[1] != 0) {
+			var_dump($$Result->queryString);
+			var_dump($infoReq);
+			var_dump($infoBDD);
+			return false;
+		}
+
+
 $Result->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Value');
 $Tab_Value = $Result->fetch();
 
@@ -37,9 +48,19 @@ $Query_Parameters = 'SELECT temp_max AS [Temperature_Max], temp_min AS [Temperat
 $Result = $db->prepare($Query_Parameters);
 $Result->execute();
 
+$infoReq = $Result->errorInfo();
+		$infoBDD = ($db->errorInfo();
+		if ($infoReq[1] != NULL || $infoBDD[1] != 0) {
+			var_dump($$Result->queryString);
+			var_dump($infoReq);
+			var_dump($infoBDD);
+			return false;
+		}
+
 $Result->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Parameters');
 $Param_Value = $Result->fetch();
 
 $JSON = array('Parameters' => $Param_Value, 'Value' => $Param_Value );
-echo json_encode($JSON);
-var_dump(json_encode($JSON));
+$JSON_String = json_encode($JSON);
+echo $JSON_String;
+var_dump($JSON_String);
