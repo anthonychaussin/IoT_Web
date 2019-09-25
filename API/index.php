@@ -23,10 +23,9 @@ $Result->execute();
 $infoReq = $Result->errorInfo();
 		$infoBDD = ($db->errorInfo();
 		if ($infoReq[1] != NULL || $infoBDD[1] != 0) {
-			var_dump($$Result->queryString);
+			var_dump($Result->queryString);
 			var_dump($infoReq);
 			var_dump($infoBDD);
-			return false;
 		}
 
 
@@ -51,10 +50,9 @@ $Result->execute();
 $infoReq = $Result->errorInfo();
 		$infoBDD = ($db->errorInfo();
 		if ($infoReq[1] != NULL || $infoBDD[1] != 0) {
-			var_dump($$Result->queryString);
+			var_dump($Result->queryString);
 			var_dump($infoReq);
 			var_dump($infoBDD);
-			return false;
 		}
 
 $Result->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Parameters');
