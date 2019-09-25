@@ -14,7 +14,7 @@ $PWD = "admin";
 
 
 $db = new PDO("$sgbd:server=$Server_Name;Database=$DataBase_Name", $User_Id, $PWD);
-$Query_Values = 'SELECT date_value AS "Date", temp_value AS "Temperature", humid_value AS "Pourcentage_Humidite" FROM value';
+$Query_Values = 'SELECT date_value AS "Date", temp_value AS "Temperature", humid_value AS "Pourcentage_Humidite" FROM iot.value';
 
 $Result = $db->prepare($Query_Values);
 $Result->execute();
@@ -42,7 +42,7 @@ if (isset($_GET)) {
 	}
 }
 
-$Query_Parameters = 'SELECT temp_max AS "Temperature_Max", temp_min AS "Temperature_Min", humid_max AS "Humidite_Max", humid_min AS "Humidite_Min" FROM parameters';
+$Query_Parameters = 'SELECT temp_max AS "Temperature_Max", temp_min AS "Temperature_Min", humid_max AS "Humidite_Max", humid_min AS "Humidite_Min" FROM iot.parameters';
 
 $Result = $db->prepare($Query_Parameters);
 $Result->execute();
