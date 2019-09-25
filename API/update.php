@@ -10,10 +10,7 @@ $PWD = "admin";
 
 $db = new PDO("$sgbd:server=$Server_Name;Database=$DataBase_Name", $User_Id, $PWD);
 
-$humid = 50;
-$temp = 30;
-$count = 0;
-
+$time = date_timestamp_get();
 while ($count <= 300) {
 	$count++;
 	if(rand(0,1)==0){$humid += rand(0,100)*0.01;}
@@ -27,7 +24,6 @@ while ($count <= 300) {
 	$Result = $db->prepare($Query_Values);
 	$Result->execute([$temp, $humid]);
 
-	sleep(30);
 
 	$infoReq = $Result->errorInfo();
 	$infoBDD = $db->errorInfo();
@@ -42,3 +38,5 @@ while ($count <= 300) {
 
 
  ?>
+
+ UPDATE `value` SET `date_value` = '2019-09-25 11:30:13', `temp_value` = '', `humid_value` = '' WHERE `value`.`id_value` = 1
