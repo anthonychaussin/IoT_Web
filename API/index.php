@@ -17,10 +17,10 @@ $db = new PDO("$sgbd:server=$Server_Name;Database=$DataBase_Name", $User_Id, $PW
 $Query_Values = 'SELECT date_value AS [Date], temp_value AS [Temperature], humid_value AS [Pourcentage_Humidite] FROM value';
 
 $Result = $db->query($Query_Values);
-/*
+
 $Result->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Value');
 $Tab_Value = $Result->fetch();
-
+/*
 if (isset($_GET)) {
 	if (isset($_GET['Start_Datetime']) && isset($_GET['End_Datetime'])) {
 		foreach ($Tab_Value as $key => $value) {
