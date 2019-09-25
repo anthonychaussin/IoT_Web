@@ -16,22 +16,16 @@ $count = 0;
 
 while ($count <= 300) {
 	$count++;
-	if(rand(0,1)==0){
-		$humid += rand(0,100)*0.01;
-	}
-	else{
-		$humid -= rand(0,100)*0.01;	
-	}
-	if(rand(0,1)==0){
-		$temp += rand(0,100)*0.01;
-	}
-	else{
-		$temp -= rand(0,100)*0.01;	
-	}
-	$Query_Values = 'INSERT INTO value (id_value, date_value, temp_value, humid_value, parameters) VALUES (NULL, CURRENT_TIMESTAMP, '$temp', '$humid', '1')';
+	if(rand(0,1)==0){$humid += rand(0,100)*0.01;}
+	else{$humid -= rand(0,100)*0.01;}
+
+	if(rand(0,1)==0){$temp += rand(0,100)*0.01;	}
+	else{$temp -= rand(0,100)*0.01;	}
+
+	$Query_Values = 'INSERT INTO value (id_value, date_value, temp_value, humid_value, parameters) VALUES (NULL, CURRENT_TIMESTAMP, ?, ?, 1)';
 
 	$Result = $db->prepare($Query_Values);
-	$Result->execute();
+	$Result->execute([$temp, $humid]);
 
 
 	$infoReq = $Result->errorInfo();
