@@ -3,7 +3,7 @@
 /**
  * Classe Value
  */
-class Value extends AnotherClass
+class Value
 {
 	public $Date;
 	public $Température;
@@ -24,7 +24,7 @@ class Value extends AnotherClass
 /**
  * Classe Température
  */
-class Temp extends AnotherClass
+class Temp
 {
 	public $Température;
 	
@@ -37,7 +37,7 @@ class Temp extends AnotherClass
 /**
  * Classe Humidité
  */
-class Humid extends AnotherClass
+class Humid
 {
 	public $Humidité;
 	
@@ -51,7 +51,7 @@ class Humid extends AnotherClass
 /**
  * Classe Parametrs
  */
-class Parameters extends AnotherClass
+class Parameters
 {
 	public $Température_Max;
 	public $Température_Min;
