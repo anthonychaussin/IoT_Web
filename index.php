@@ -17,8 +17,8 @@
                 b.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                 b.send(data);
             }
-
-            function getHTTPPost('/API', '', console.log);
+            $url = '/API';
+            function getHTTPPost($url, '', console.log);
         </script>
 
 
