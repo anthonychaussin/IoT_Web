@@ -12,4 +12,3 @@ class Humid
 		$this->Humidite = $Humidite;
 	}
 }
- ?>

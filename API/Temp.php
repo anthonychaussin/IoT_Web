@@ -12,5 +12,3 @@ class Temp
 		$this->Temperature = $Temperature;
 	}
 }
-
-?>

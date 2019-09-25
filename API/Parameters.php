@@ -9,7 +9,7 @@ class Parameters
 	public $Humidite_Max;
 	public $Humidite_Min;
 	
-	function __construct($Temperature_Max, $Temperature_Min, $Humidite_Max, $Humidite_Min)
+	public function __construct($Temperature_Max, $Temperature_Min, $Humidite_Max, $Humidite_Min)
 	{
 		$this->Temperature_Max = new Temp($Temperature_Max);
 		$this->Temperature_Min = new Temp($Temperature_Min);
@@ -17,5 +17,3 @@ class Parameters
 		$this->Humidite_Min = new Humid($Humidite_Min);
 	}
 }
-
- ?>
