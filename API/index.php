@@ -21,7 +21,7 @@ $Result->execute();
 
 
 $infoReq = $Result->errorInfo();
-		$infoBDD = ($db->errorInfo();
+		$infoBDD = $db->errorInfo();
 		if ($infoReq[1] != NULL || $infoBDD[1] != 0) {
 			var_dump($Result->queryString);
 			var_dump($infoReq);
@@ -48,7 +48,7 @@ $Result = $db->prepare($Query_Parameters);
 $Result->execute();
 
 $infoReq = $Result->errorInfo();
-		$infoBDD = ($db->errorInfo();
+		$infoBDD = $db->errorInfo();
 		if ($infoReq[1] != NULL || $infoBDD[1] != 0) {
 			var_dump($Result->queryString);
 			var_dump($infoReq);
