@@ -61,4 +61,3 @@ $Param_Value = $Result->fetch();
 $JSON = array('Parameters' => $Param_Value, 'Value' => $Param_Value );
 $JSON_String = json_encode($JSON);
 echo $JSON_String;
-var_dump($JSON_String);
