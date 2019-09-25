@@ -21,7 +21,7 @@ $Result->execute();
 
 $Result->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Value');
 $Tab_Value = $Result->fetch();
-/*
+
 if (isset($_GET)) {
 	if (isset($_GET['Start_Datetime']) && isset($_GET['End_Datetime'])) {
 		foreach ($Tab_Value as $key => $value) {
@@ -34,11 +34,11 @@ if (isset($_GET)) {
 
 $Query_Parameters = 'SELECT temp_max AS [Temperature_Max], temp_min AS [Temperature_Min], humid_max AS [Humidite_Max], humid_min AS [Humidite_Min] FROM parameters';
 
-$Result = $db->query($Query_Parameters);
+$Result = $db->prepare($Query_Parameters);
+$Result->execute();
 
 $Result->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Parameters');
 $Param_Value = $Result->fetch();
 
 $JSON = array('Parameters' => $Param_Value, 'Value' => $Param_Value );
 echo json_encode($JSON);
-*/
