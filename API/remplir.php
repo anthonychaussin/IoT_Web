@@ -10,8 +10,8 @@ $PWD = "admin";
 
 $db = new PDO("$sgbd:server=$Server_Name;Database=$DataBase_Name", $User_Id, $PWD);
 
-$humid = 30;
-$temp = 50;
+$humid = 50;
+$temp = 30;
 $count = 0;
 
 while ($count <= 300) {
