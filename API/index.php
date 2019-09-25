@@ -76,7 +76,7 @@ $PWD = "admin";
 
 
 $db = new PDO("$sgbd:server=$Server_Name;Database=$DataBase_Name", $User_Id, $PWD);
-$Query_Values = 'SELECT date_value AS [Date], temp_value AS [Température], humid_value AS [Pourcentage_Humidité] FROM value'
+$Query_Values = 'SELECT date_value AS [Date], temp_value AS [Température], humid_value AS [Pourcentage_Humidité] FROM value';
 
 $Result = $db->query($Query_Values);
 
@@ -93,7 +93,7 @@ if (isset($_GET)) {
 	}
 }
 
-$Query_Parameters = 'SELECT temp_max AS [Température_Max], temp_min AS [Température_Min], humid_max AS [Humidité_Max], humid_min AS [Humidité_Min] FROM parameters'
+$Query_Parameters = 'SELECT temp_max AS [Température_Max], temp_min AS [Température_Min], humid_max AS [Humidité_Max], humid_min AS [Humidité_Min] FROM parameters';
 
 $Result = $db->query($Query_Parameters);
 
