@@ -70,11 +70,11 @@ class Parameters extends AnotherClass
 	}
 }
 
-$sgbd = "";
-$Server_Name = "";
-$DataBase_Name = "";
-$User_Id = "";
-$PWD = "";
+$sgbd = "mysql";
+$Server_Name = "localhost";
+$DataBase_Name = "iot";
+$User_Id = "admin";
+$PWD = "admin";
 
 
 
@@ -105,4 +105,3 @@ $Param_Value = $Result->fetch();
 
 $JSON = array('Parameters' => $Param_Value, 'Value' => $Param_Value );
 echo json_encode($JSON);
- ?>
