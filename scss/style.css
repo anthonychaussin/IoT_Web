@@ -1,16 +1,105 @@
 body {
+    background: rgb(2,0,36);
+    background: linear-gradient(133deg, rgba(2,0,36,1) 0%, rgba(43,9,121,1) 50%, rgba(83,3,255,1) 100%);
+    height: 100vh;
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100vh;
     position: relative;
     display: flex;
 }
 
+.Main {
+width: 100%;
+}
+
+/*-----------------------------------------*/
+/* MENU */
+/*-----------------------------------------*/
 .Menu {
     width: 250px;
-    height: 100%;
-    background-color: aqua;
+    
+    background-color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0 0;
+}
+
+.Menu-title {
+    color: white;
+    margin: 0 auto;
+    font-size: 36px;
+  
+}
+
+.Menu-list {
+    list-style: none;
+    margin: 50px auto 0;
+    padding: 0;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Menu-listing {
+    list-style: none;
+    margin: 20px 0;
+    padding: 15px 40px;
+    border-radius: 3px;
+    transition: .5s;
+    background: rgb(154,20,0);
+    background: linear-gradient(145deg, rgba(154,20,0,1) 0%, rgba(203,102,0,1) 50%, rgba(255,189,3,1) 100%);
     
 }
 
+.Menu-listing:hover {
+    transition: .5s;
+    transform: scale(1.1);
+}
+
+.Menu-listingLink {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+}
+
+/*-----------------------------------------*/
+/* Dashboard */
+/*-----------------------------------------*/
+
+.Dashboard {
+    padding: 30px 50px;
+    
+}
+
+.Dashboard-title {
+    color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#chart_div {
+    height: 90%;
+    width: 100%;
+}
+
+#chart_div rect {
+    fill: rgba(0,0,0,0.2)
+}
+
+#chart_div text {
+    fill: white !important;
+}
+
+/*-----------------------------------------*/
+/* Historique */
+/*-----------------------------------------*/
+
+.Historique li {
+    color: white;
+    margin: 10px 0;
+    
+}
